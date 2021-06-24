@@ -15,6 +15,7 @@ app.get('/api/block/:id', (req, res) => {
     params: [idPrepared, true],
     id: 1,
   };
+
   axios
     .post(API_URL, options, {
       headers: { 'Content-Type': 'application/json' },

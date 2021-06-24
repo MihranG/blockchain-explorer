@@ -14,3 +14,31 @@
   font-size: calc(10px + 2vmin);
   color: red;
 }
+
+
+.main{
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  &__form-group{
+    width: 400px;
+  }
+
+  &__number-input{
+    padding-right: calc(1.5em + 0.75rem) !important;
+    // width: 500px !important;
+  }
+  &__number-feedback{
+
+  }
+}
+
+
