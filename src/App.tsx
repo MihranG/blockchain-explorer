@@ -1,12 +1,14 @@
 import React , {useEffect} from 'react';
 import logo from './logo.svg';
 import './App.scss';
-import Button from 'react-bootstrap/Button';
+import {Button, Container} from 'react-bootstrap';
 import {
     BrowserRouter as Router,
     Route,
     Switch
 } from 'react-router-dom';
+import Main from "./Main";
+import Block from "./Block";
 
 
 function App() {
@@ -15,26 +17,20 @@ function App() {
         .then(res => res.json())
         .then(res => {
           console.log('response', res.data )});
-  },[])
+  },[]);
+
   return (
       <Router>
           <Switch>
-              <Route path='/:id' render={({ location, match}) =>
-                  <div>{match.params.id}</div>
-              }>
-              </Route>
-              <Route path='/'>
-                  <div className="App">
-                      <header className="App-header">
-
-                          <Button variant="outline-secondary" >
-                              test
-                          </Button>
-                      </header>
-                  </div>
-              </Route>
+              <Container fluid>
+                  <Route path='/' >
+                      <Main/>
+                  </Route>
+                  <Route path='/:id' render={({ match}) =>
+                      <Block />}
+                  />
+              </Container>
           </Switch>
-
       </Router>
 
   );
