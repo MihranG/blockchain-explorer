@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5191dea-4f44-4afe-9482-a59105d0acc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nodemon.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="e5191dea-4f44-4afe-9482-a59105d0acc4" name="Default Changelist" comment="" />
+    <list id="809d86e2-35d1-46d7-8fa8-21e784b11f8c" name="Revert &quot;initial add express server, react bootstrap, react router functionality&quot;" comment="Revert &quot;initial add express server, react bootstrap, react router functionality&quot;&#10;&#10;This reverts commit c26b790e" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1uLrSM8lWNlQiWOHEt8V22T8Ruo" />
   <component name="ProjectViewState">
@@ -27,6 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -52,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1624455709327</updated>
       <workItem from="1624455711009" duration="6893000" />
-      <workItem from="1624516414696" duration="1780000" />
+      <workItem from="1624516414696" duration="2349000" />
     </task>
     <task id="LOCAL-00001" summary="redux">
       <created>1624533663586</created>
@@ -61,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624533663586</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="initial add express server, react bootstrap, react router functionality">
+      <created>1624534392470</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624534392470</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,7 +86,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -80,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="redux" />
-    <option name="LAST_COMMIT_MESSAGE" value="redux" />
+    <MESSAGE value="initial add express server, react bootstrap, react router functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial add express server, react bootstrap, react router functionality" />
   </component>
 </project>
