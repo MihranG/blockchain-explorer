@@ -16,28 +16,42 @@ export interface ITransaction {
     s: string;
 }
 
-export interface IResponseResult {
+export interface IStringKeys {
+    [key: string]: string,
+}
+
+
+export interface IResponseResultStrings {
     difficulty: string,
     extraData: string,
     gasLimit: string,
     gasUsed: string,
-    hash: string,
     logsBloom: string,
-    miner: string,
-    mixHash: string,
-    nonce: string,
     number: string,
-    parentHash: string,
     receiptsRoot: string,
-    sha3Uncles:  string,
     size:  string,
     stateRoot:  string,
     timestamp:  string,
     totalDifficulty:  string,
-    transactions: ITransaction[],
     transactionsRoot: string
+}
+
+export interface IResponseResultHashes {
+    hash: string,
+    parentHash: string,
+    sha3Uncles:  string,
+    stateRoot:  string,
+    nonce: string,
+    miner: string,
+    mixHash: string,
+}
+
+export interface IResponseResultArrays {
+    transactions: ITransaction[],
     uncles: any[]
 }
+
+export type IResponseResult = IResponseResultArrays & IResponseResultStrings & IResponseResultHashes;
 
 
 

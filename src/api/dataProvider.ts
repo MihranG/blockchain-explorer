@@ -6,7 +6,7 @@ class DataProvider {
     constructor(mainUrl: string) {
         this.baseUrl = mainUrl;
     }
-    async getBlockData(id: string):Promise<IResponseData | void >{
+    async getBlockData<T>(id: string):Promise<T | undefined>{
         try{
             const result = await fetch(`${this.baseUrl}/${id}`);
             return result.json();
