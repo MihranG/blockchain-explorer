@@ -1,4 +1,4 @@
-import {IResponseResultHashes} from "../types/Interfaces";
+import { IResponseResultHashes } from '../types/Interfaces';
 // type THashNames = {
 //     'hash' |
 //     'parentHash'|
@@ -8,12 +8,12 @@ import {IResponseResultHashes} from "../types/Interfaces";
 // }
 
 const arrayOfHashes: string[] = [
-    'hash',
-    'parentHash',
-    'sha3Uncles',
-    'stateRoot',
-    'nonce',
-    'miner',
-    'mixHash',
-]
-export const setOfHashes = new Set(arrayOfHashes)
+  'hash',
+  'parentHash',
+  'sha3Uncles',
+  'stateRoot',
+  'nonce',
+  'miner',
+  'mixHash',
+];
+export const setOfHashes = new Set(arrayOfHashes);

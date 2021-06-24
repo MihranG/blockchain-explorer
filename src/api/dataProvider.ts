@@ -1,24 +1,22 @@
-import {UrlEnums} from "../types/enums";
-import {IResponseData} from "../types/Interfaces";
-import axios from "axios";
+import { UrlEnums } from '../types/enums';
+import { IResponseData } from '../types/Interfaces';
+import axios from 'axios';
 
 class DataProvider {
-    baseUrl: string;
-    constructor(mainUrl: string) {
-        this.baseUrl = mainUrl;
+  baseUrl: string;
+  constructor(mainUrl: string) {
+    this.baseUrl = mainUrl;
+  }
+  async getBlockData<T>(id: string): Promise<T | void> {
+    try {
+      const { status, data } = await axios(`${this.baseUrl}/${id}`);
+      if (status === 200) {
+        return data;
+      }
+    } catch (e) {
+      console.error(e);
     }
-    async getBlockData<T>(id: string):Promise<T | void>{
-        try{
-            const {status, data} = await axios(`${this.baseUrl}/${id}`);
-            if(status === 200){
-                return data
-            }
-
-        }catch (e){
-            console.error(e)
-        }
-    }
+  }
 }
 
-
-export const dataProvider = new DataProvider(UrlEnums.prefix)
+export const dataProvider = new DataProvider(UrlEnums.prefix);

@@ -1,8 +1,7 @@
 export enum BlockNumberEnums {
-    Latest = 'latest'
+  Latest = 'latest',
 }
 
-
 export enum UrlEnums {
-    prefix = '/api/block'
+  prefix = '/api/block',
 }
