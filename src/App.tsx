@@ -1,7 +1,6 @@
 import React , {useEffect} from 'react';
-import logo from './logo.svg';
 import './App.scss';
-import {Button, Container} from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import {
     BrowserRouter as Router,
     Route,
@@ -12,25 +11,19 @@ import Block from "./Block";
 
 
 function App() {
-  useEffect(()=>{
-    fetch('/api/block/234234')
-        .then(res => res.json())
-        .then(res => {
-          console.log('response', res.data )});
-  },[]);
-
   return (
       <Router>
-          <Switch>
-              <Container fluid>
+          <Container fluid>
+              <Switch>
+
+                  <Route path='/:id'  exact>
+                      <Block />
+                  </Route>
                   <Route path='/' >
                       <Main/>
                   </Route>
-                  <Route path='/:id' render={({ match}) =>
-                      <Block />}
-                  />
-              </Container>
-          </Switch>
+              </Switch>
+          </Container>
       </Router>
 
   );

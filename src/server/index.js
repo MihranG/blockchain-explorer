@@ -1,5 +1,5 @@
 const express = require('express');
-const fetch = require('node-fetch');
+const axios = require('axios');
 const {decimalToHexStringDigit} = require('./utils')
 
 // const os = require('os');
@@ -12,23 +12,19 @@ app.use(express.static('dist'));
 app.get('/api/getUsername', (req, res) => res.send({ username: "os.userInfo().username" }));
 app.get('/api/block/:id', (req, res) => {
     const id = req.params.id;
-    console.log('id', id, parseInt(id),parseInt(id).toString(16) )
     const idPrepared = id === 'latest' ? id : decimalToHexStringDigit(id);
     const options = {"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":[idPrepared, true],"id":1}
-        fetch(API_URL, {
-            method: 'POST',
+        axios.post(API_URL, options, {
             headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(options)
+
         }).then((r)=>{
             if(r.status === 200){
-                return r.json()
+                res.send({data: r.data});
             }else {
-                res.send({ error: true, errorMessage: 'UNKNOWN_ERROR' })
+                res.send({ error: true, errorMessage: 'UNKNOWN_ERROR' });
             }
-        }).then(jsonRes=>{
-            res.send({data: jsonRes})
         }).catch(e=>{
-            res.send({ error: true, errorMessage: e })
+            res.send({ error: true, errorMessage: e });
         })
 
 });
