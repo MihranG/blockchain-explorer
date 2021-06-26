@@ -15,7 +15,7 @@ const TransactionPagination: FC<ITransactionPaginationProps> = ({
   pageObject,
   onPerPage,
 }) => {
-  const { current, qty, perPage } = pageObject;
+  const { current, qty } = pageObject;
 
   const onPageNextPrev = (isNext: boolean) => {
     const addition = isNext ? 1 : -1;

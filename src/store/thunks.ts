@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { dataProvider } from '../api/dataProvider';
-import { IErrorObject, IResponseData } from '../types/Interfaces';
+import { IResponseData } from '../types/Interfaces';
 import { hexNumberObjectManipulation } from '../utils/exceptions';
 
 export const fetchBlock = createAsyncThunk<

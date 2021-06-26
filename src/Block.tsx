@@ -17,7 +17,7 @@ const Block: FC<{}> = () => {
     dispatch(fetchBlock(match.params.id));
   }, [match.params]);
 
-  const { data, loading, ...rest } = useSelector(
+  const { data, loading } = useSelector(
     (state: RootState) => state.block
   );
   const {

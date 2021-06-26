@@ -1,5 +1,4 @@
 import { UrlEnums } from '../types/enums';
-import { IResponseData } from '../types/Interfaces';
 import axios from 'axios';
 
 class DataProvider {

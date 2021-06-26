@@ -1,5 +1,5 @@
-import { FC, ChangeEvent, useEffect, useState } from 'react';
-import { Card, Container, Table, Pagination } from 'react-bootstrap';
+import { FC, useEffect, useState } from 'react';
+import { Card, Container, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouteMatch, Link } from 'react-router-dom';
 import { numberFromHexString } from './utils/helpers';
