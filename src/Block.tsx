@@ -1,39 +1,23 @@
 import { FC, useEffect, useState } from 'react';
 import { Card, Table, Container } from 'react-bootstrap';
 import { useHistory, useRouteMatch } from 'react-router-dom';
-import { dataProvider } from './api/dataProvider';
-import { IResponseData } from './types/Interfaces';
-// import { numberFromHexString } from './utils/helpers';
-import { hexNumberObjectManipulation } from './utils/exceptions';
+import { useDispatch, useSelector} from 'react-redux';
 import TableRow from './TableRow';
 import Loading from './Loading';
 import { hexToAsciiString } from './utils/helpers';
+import {fetchBlock} from "./store/thunks";
+import {RootState} from "./store/store";
 
 const Block: FC<{}> = () => {
   const match = useRouteMatch<{ id: string }>();
   const history = useHistory();
-  const [data, setData] = useState<IResponseData | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setLoading(true);
-    dataProvider
-      .getBlockData<{ data: IResponseData }>(match.params.id)
-      .then((res) => {
-        console.log('res', res);
-        if (res?.data?.result) {
-          const result = hexNumberObjectManipulation(res.data.result);
-          setData({ ...res.data, result });
-        }
-      })
-      .catch((e) => {
-        console.log('error', e);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    dispatch(fetchBlock(match.params.id))
   }, [match.params]);
 
+  const {data, loading} = useSelector((state: RootState) => state.block)
   const {
     number,
     timestamp,
@@ -44,12 +28,20 @@ const Block: FC<{}> = () => {
     gasLimit,
     extraData,
   } = data?.result || {};
+
   const onTransactionsClick = () => {
-    history.push(`${match.params.id}/transactions`, {
-      transactions,
-      blockNumber: number,
-    });
+    history.push(`${match.params.id}/transactions`);
   };
+
+  const getGasUsedPercent = (): string =>{
+    if(gasUsed && gasLimit){
+      const limit = (parseInt(gasUsed) * 100) / parseInt(gasLimit);
+      const limitRounded = Math.round(limit * 1000)/1000
+      return  `( ${limitRounded} %)`
+    }else{
+      return 'Unknown error'
+    }
+  }
 
   return (
     <Container>
@@ -96,9 +88,7 @@ const Block: FC<{}> = () => {
                     name={'Gas Used'}
                     value={gasUsed}
                     isLocale
-                    extraValue={`(${
-                      (parseInt(gasUsed) * 100) / parseInt(gasLimit)
-                    } %)`}
+                    extraValue={getGasUsedPercent()}
                   />
                 )}
                 {gasLimit && (
