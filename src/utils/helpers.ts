@@ -7,7 +7,6 @@ export const numberFromHexString = (hexString: string): number => {
 };
 
 export const hexToAsciiString = (hexString: string): string => {
-  console.log('hexS', hexString);
   const hexStringChanged = hexString.split('x')[1];
   let strOut = '';
   for (let x = 0; x < hexStringChanged.length; x += 2) {

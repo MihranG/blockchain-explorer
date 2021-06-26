@@ -20,7 +20,9 @@ const arrayOfHashes: string[] = [
 ];
 export const setOfHashes = new Set(arrayOfHashes);
 
-export const hexNumberObjectManipulation = (resultObj: IResponseResult) : IResponseResult => {
+export const hexNumberObjectManipulation = (
+  resultObj: IResponseResult
+): IResponseResult => {
   const obj: { [key: string]: string } = {};
   Object.keys(resultObj).forEach((e, index) => {
     const elementKey = e as keyof IResponseResult;
@@ -34,7 +36,9 @@ export const hexNumberObjectManipulation = (resultObj: IResponseResult) : IRespo
         const number = numberFromHexString(element);
         if (elementKey === 'timestamp') {
           const date = new Date(number * 1000);
-          obj[elementKey] = date.toISOString();
+          obj[
+            elementKey
+          ] = `${date.toLocaleDateString()}  ${date.toLocaleTimeString()}`;
         } else if (true || elementKey === 'number') {
           obj[elementKey] = number.toString();
         } else {

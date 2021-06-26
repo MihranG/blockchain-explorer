@@ -59,3 +59,7 @@ export interface IResponseData {
   id: number;
   result: IResponseResult | null;
 }
+
+export interface IErrorObject {
+  errorMessage: string;
+}

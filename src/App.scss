@@ -51,8 +51,25 @@
   }
 }
 
+.block-item{
+  &__table{
+    td{
+      &.clickable{
+        background-color: antiquewhite;
+        color: $primary;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 
 .transaction{
+  &__header{
+    display: flex;
+    justify-content: space-between;
+  }
   &__table{
     font-size: 10px;
     tr{
@@ -62,6 +79,20 @@
       overflow: auto;
       text-overflow: ellipsis;
       max-width: 80px;
+
+    }
+  }
+  &__pagination{
+    display: flex;
+    justify-content: center;
+    .per-page{
+      &__label{
+        font-size: 10px;
+        margin-right: 10px;
+        color: $primary;
+        text-align: center;
+        font-weight: 600;
+      }
     }
   }
 }

@@ -3,15 +3,15 @@ import { Row, Form, Button, InputGroup } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { BlockNumberEnums } from './types/enums';
 
+const BLOCK_MAX_NUMBER = 13000000;
+
 const Main: FC<{}> = () => {
   const history = useHistory();
   const [value, setValue] = useState<string>('');
 
   const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    //setValue('');
     history.push(value);
-    console.log('submit', value);
   };
 
   const onLatestClick = () => {
@@ -36,7 +36,7 @@ const Main: FC<{}> = () => {
               placeholder="block number"
               value={value}
               className="main__number-input"
-              isInvalid={parseInt(value) > 13000000}
+              isInvalid={parseInt(value) > BLOCK_MAX_NUMBER}
               onChange={(e) => setValue(e.target.value)}
             />
             <InputGroup.Append>
@@ -48,7 +48,8 @@ const Main: FC<{}> = () => {
               type="invalid"
               className="main__number-feedback"
             >
-              Please provide number
+              Please provide a valid block number between 0 -{' '}
+              {BLOCK_MAX_NUMBER.toLocaleString()}
             </Form.Control.Feedback>
           </InputGroup>
         </Form.Group>

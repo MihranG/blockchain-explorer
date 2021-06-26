@@ -1,12 +1,12 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 import { Card, Table, Container } from 'react-bootstrap';
 import { useHistory, useRouteMatch } from 'react-router-dom';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import TableRow from './TableRow';
 import Loading from './Loading';
 import { hexToAsciiString } from './utils/helpers';
-import {fetchBlock} from "./store/thunks";
-import {RootState} from "./store/store";
+import { fetchBlock } from './store/thunks';
+import { RootState } from './store/store';
 
 const Block: FC<{}> = () => {
   const match = useRouteMatch<{ id: string }>();
@@ -14,10 +14,12 @@ const Block: FC<{}> = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchBlock(match.params.id))
+    dispatch(fetchBlock(match.params.id));
   }, [match.params]);
 
-  const {data, loading} = useSelector((state: RootState) => state.block)
+  const { data, loading, ...rest } = useSelector(
+    (state: RootState) => state.block
+  );
   const {
     number,
     timestamp,
@@ -33,18 +35,18 @@ const Block: FC<{}> = () => {
     history.push(`${match.params.id}/transactions`);
   };
 
-  const getGasUsedPercent = (): string =>{
-    if(gasUsed && gasLimit){
+  const getGasUsedPercent = (): string => {
+    if (gasUsed && gasLimit) {
       const limit = (parseInt(gasUsed) * 100) / parseInt(gasLimit);
-      const limitRounded = Math.round(limit * 1000)/1000
-      return  `( ${limitRounded} %)`
-    }else{
-      return 'Unknown error'
+      const limitRounded = Math.round(limit * 1000) / 1000;
+      return `( ${limitRounded} %)`;
+    } else {
+      return 'Unknown error';
     }
-  }
+  };
 
   return (
-    <Container>
+    <Container className="block-item">
       <Card className="my-5">
         <Card.Header>
           Block Number:{' '}
@@ -54,7 +56,7 @@ const Block: FC<{}> = () => {
           {loading ? (
             <Loading />
           ) : (
-            <Table striped bordered hover>
+            <Table striped bordered hover className="block-item__table">
               <thead>
                 <tr>
                   <th>Label</th>

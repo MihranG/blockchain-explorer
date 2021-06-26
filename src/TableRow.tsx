@@ -21,7 +21,7 @@ const TableRow: FC<ITableRow> = ({
   return (
     <tr onClick={onClickHandle}>
       <td>{name}</td>
-      <td>
+      <td className={onClick ? 'clickable' : ''}>
         {isLocale ? parseInt(value).toLocaleString() : value} {extraValue}
       </td>
     </tr>
