@@ -22,7 +22,7 @@ const Main: FC<{}> = () => {
   return (
     <Row className="justify-content-md-center m-5 main">
       <Form onSubmit={onSubmit}>
-        <Form.Group controlId="validationFormik01" className='main__form-group'>
+        <Form.Group controlId="validationFormik01" className="main__form-group">
           <Form.Label> Type block number or choose latest</Form.Label>
           <InputGroup className="mb-3" hasValidation>
             <InputGroup.Prepend>
@@ -35,8 +35,8 @@ const Main: FC<{}> = () => {
               type="number"
               placeholder="block number"
               value={value}
-              className='main__number-input'
-              isInvalid={parseInt(value) > 13000000 }
+              className="main__number-input"
+              isInvalid={parseInt(value) > 13000000}
               onChange={(e) => setValue(e.target.value)}
             />
             <InputGroup.Append>
@@ -44,12 +44,13 @@ const Main: FC<{}> = () => {
                 Find
               </Button>
             </InputGroup.Append>
-            <Form.Control.Feedback type="invalid" className='main__number-feedback'>
+            <Form.Control.Feedback
+              type="invalid"
+              className="main__number-feedback"
+            >
               Please provide number
             </Form.Control.Feedback>
-
           </InputGroup>
-
         </Form.Group>
       </Form>
     </Row>

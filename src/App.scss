@@ -42,3 +42,26 @@
 }
 
 
+.navbar{
+  &__brand{
+    cursor: pointer;
+    color: $secondary;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+}
+
+
+.transaction{
+  &__table{
+    font-size: 10px;
+    tr{
+      width: 100%;
+    }
+    td{
+      overflow: auto;
+      text-overflow: ellipsis;
+      max-width: 80px;
+    }
+  }
+}
