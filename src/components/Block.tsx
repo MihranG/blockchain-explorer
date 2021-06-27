@@ -5,21 +5,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import TableRow from './TableRow';
 import Loading from './Loading';
 import { hexToAsciiString } from '../utils/helpers';
-import { fetchBlock } from '../store/thunks';
 import { RootState } from '../store/store';
+import useFetchBlock from '../hooks/useFetchBlock';
 
 const Block: FC<{}> = () => {
   const match = useRouteMatch<{ id: string }>();
   const history = useHistory();
-  const dispatch = useDispatch();
+  useFetchBlock<{ id: string }>(match.params.id, match.params);
 
-  useEffect(() => {
-    dispatch(fetchBlock(match.params.id));
-  }, [match.params]);
-
-  const { data, loading } = useSelector(
-    (state: RootState) => state.block
-  );
+  const { data, loading } = useSelector((state: RootState) => state.block);
   const {
     number,
     timestamp,

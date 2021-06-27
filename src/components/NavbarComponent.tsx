@@ -21,7 +21,7 @@ const NavbarComponent: FC<{}> = () => {
     if (errorMessage) {
       dispatch(resetApp());
     }
-  }, [history.location.pathname]);
+  }, [dispatch, errorMessage, history.location.pathname]);
 
   return (
     <>
