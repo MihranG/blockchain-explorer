@@ -4,9 +4,9 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import TableRow from './TableRow';
 import Loading from './Loading';
-import { hexToAsciiString } from './utils/helpers';
-import { fetchBlock } from './store/thunks';
-import { RootState } from './store/store';
+import { hexToAsciiString } from '../utils/helpers';
+import { fetchBlock } from '../store/thunks';
+import { RootState } from '../store/store';
 
 const Block: FC<{}> = () => {
   const match = useRouteMatch<{ id: string }>();

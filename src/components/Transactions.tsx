@@ -2,10 +2,10 @@ import { FC, useEffect, useState } from 'react';
 import { Card, Container, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouteMatch, Link } from 'react-router-dom';
-import { numberFromHexString } from './utils/helpers';
-import { RootState } from './store/store';
+import { numberFromHexString } from '../utils/helpers';
+import { RootState } from '../store/store';
 import Loading from './Loading';
-import { fetchBlock } from './store/thunks';
+import { fetchBlock } from '../store/thunks';
 import TransactionPagination from './TransactionPaginations';
 
 export interface IPageObject {

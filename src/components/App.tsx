@@ -7,7 +7,7 @@ import Main from './Main';
 import Block from './Block';
 import NavbarComponent from './NavbarComponent';
 import Transactions from './Transactions';
-import { store } from './store/store';
+import { store } from '../store/store';
 
 function App() {
   return (

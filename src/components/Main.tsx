@@ -1,7 +1,7 @@
 import { FC, SyntheticEvent, useState } from 'react';
 import { Row, Form, Button, InputGroup } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { BlockNumberEnums } from './types/enums';
+import { BlockNumberEnums } from '../types/enums';
 
 const BLOCK_MAX_NUMBER = 13000000;
 

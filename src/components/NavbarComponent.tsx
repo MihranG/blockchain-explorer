@@ -2,8 +2,8 @@ import { FC, useEffect } from 'react';
 import { useHistory, useLocation, Link } from 'react-router-dom';
 import { Container, Navbar, Nav, Alert } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from './store/store';
-import { resetApp } from './store/blockSlice';
+import { RootState } from '../store/store';
+import { resetApp } from '../store/blockSlice';
 
 const NavbarComponent: FC<{}> = () => {
   const history = useHistory();
