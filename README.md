@@ -15,11 +15,11 @@ You will also see any lint errors in the console.
 
 ### `yarn server`
 
-Launches the local development server on port 8080 with nodemon watching changes and restarting the server
-
+Launches the local development server on port 8080 [http://localhost:8080](http://localhost:8080) with nodemon watching changes and restarting the server
 
 
 ### `yarn dev`
 
 Concurrently launches frontend application and local server allowing to use an application on local machine.  For stopping it just use Ctrl+c
 
+Open [http://localhost:3000](http://localhost:3000) to view app in the browser.
